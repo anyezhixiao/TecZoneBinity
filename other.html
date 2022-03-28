@@ -3,14 +3,30 @@
 	<head>
 		<meta charset="utf-8">
 		<title>TecZoneBinity</title>
+		<script type="text/javascript">
+			var i=0;
+			function roulette() {
+				i++;
+				if(Math.random()<0.8) {
+					document.getElementById("roulette").innerHTML="已开"+i+"枪"
+				}else{
+					alert("已开"+i+"枪,你炸了");
+					if(i==1) {
+						document.write("<h1 align='center'>一发入魂!</h1>");
+					}else{
+						document.write("<h1 align='center'>逝者安息</h1>");
+					}	
+				}
+			}
+		</script>
 		<style type="text/css">
 			h1{ 
 			    background-image:-webkit-linear-gradient(left,#FFFF00,#AAFF44,#88FF88,#00FFAA,#00FFFF);
 			    -webkit-background-clip:text;
 				-webkit-text-fill-color:transparent;
 			}
-			p{
-				background-image:-webkit-linear-gradient(left,#FFFF00,#AAFF44,#88FF88,#00FFAA,#00FFFF);
+			h3{
+				background-image:-webkit-linear-gradient(right,#FFFF00,#AAFF44,#88FF88,#00FFAA,#00FFFF);
 				-webkit-background-clip:text;
 				-webkit-text-fill-color:transparent;
 			}
@@ -28,30 +44,17 @@
 			<div id="main";style="display:inline-block; *display:inline; zoom:1;">
 				<div style="width: 100px; height: 160px; float: left;"></div>
 				<div id="guide"; style="width: 100px; height: 160px; background-color: rgba(0,256,0,0.25); float: left;";>
-					<div style="width: 100px; height: 30px; background-color: #00FF00; border: 1px solid #000000;";>首页</div>
+					<div style="width: 100px; height: 30px; border: 1px solid #000000;"; onclick={location.href="index.html"}>首页</div>
 					<div style="width: 100px; height: 30px; border: 1px solid #000000;"; onclick={location.href="resource.html"};>资源站</div>
 					<div style="width: 100px; height: 30px; border: 1px solid #000000;"; onclick={location.href="notice.html"};>公告栏</div>
 					<div style="width: 100px; height: 30px; border: 1px solid #000000;"; onclick={location.href="contact.html"};>联系我们</div>
-					<div style="width: 100px; height: 30px; border: 1px solid #000000;"; onclick={location.href="other.html"};>其它</div>
+					<div style="width: 100px; height: 30px; background-color: #00FF00; border: 1px solid #000000;";>其它</div>
 				</div>
-				<div style="width: 120px; height: 160px; float: left;"></div>
-				<div style="width: 160px; height: 160px; float: left;">
-					<br/><br/>
-					<img src="logo.png" width="160px" height="90px";/>
-				</div>
-				<div style="width: 80px; height: 160px; float: left;"></div>
 				<div id="value";style="float: left;">
-					<table>
-						<tr><td><p>官网完善中,更多功能敬请期待</p></td></tr>
-						<tr><td><p>TZB欢迎您这样充满活力的玩家!</p></td></tr>
-						<tr>
-															<!--填引号里面-->
-							<td><button onclick={location.href="none.html"}>_TZB网页地图_</button></td>
-						</tr>
-						<tr>
-							<td><button onclick={location.href="https://shimo.im/docs/5rk9deaP6QHmx2qx/"}>TZB服务器规定</button></td>
-						</tr>
-					</table>
+					<button onclick={location.href="show.html"}>TZB服务器精选照片</button>
+					<h3>小游戏:俄罗斯转盘</h3>
+					<button onclick=roulette();>点我开枪</button>
+					<h4 id="roulette">已开0枪</h4>
 				</div>
 			</div>
 		</div>
